@@ -1,0 +1,50 @@
+/* Root */
+:root {
+	--my-primary: #e5e5e5;
+}
+
+/* Sidebar */
+.sidebar {display: none; background-color: var(--my-primary); min-height: 100vh;}
+.sidebar-nav {list-style: none; padding-left: 0px; margin-top: 1.5rem;}
+.sidebar-nav > li {padding: .25rem;}
+.sidebar-nav > li > a {position: relative; text-transform: uppercase; text-decoration: none; color: var(--bs-gray);}
+.sidebar-nav > li > a:after {content: ""; position: absolute; left: 0px; right: 0px; top: 1.35rem; background-color: var(--bs-dark);}
+.sidebar-nav > li > a.active, .sidebar-nav > li > a:hover {color: var(--bs-dark);}
+.sidebar-nav > li > a.active:after {height: 1px;}
+.btn-sidebar {position: fixed; top: 15px; left: 15px;}
+@media(min-width: 768px){
+	.sidebar {display: block; position: fixed; top: 0px; width: 230px;}
+	.btn-sidebar {left: 245px;}
+}
+
+/* Content */
+.content {width: 100vw;}
+@media(min-width: 768px){
+	.content {width: calc(100vw - 230px); margin-left: 230px;}
+}
+
+/* Section Intro */
+#section-intro {height: 100vh; background-image: url('https://images.unsplash.com/photo-1518655048521-f130df041f66?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-repeat: no-repeat; background-position: center center;}
+#section-intro .d-flex {height: 100vh;}
+#section-intro .text-element {display: inline-block; font-size: 2.25rem;}
+#section-intro .text-cursor {display: inline-block; width: .25rem; height: 3.25rem; background-color: var(--bs-dark); animation: blink .75s step-end infinite;}
+#section-intro .link-more {position: absolute; bottom: 1rem;}
+#section-intro .link-more a {text-decoration: none; animation: blink-text 2s step-end infinite;}
+
+/* Section Services */
+#section-services .card .card-img-top {height: 175px; background-position: center; background-size: cover; background-repeat: no-repeat;}
+
+/* Section Work */
+#section-work .card .card-img-top {height: 250px; background-position: center; background-size: cover; background-repeat: no-repeat;}
+#section-work .card .card-footer {background-color: #fff; border-top-width: 0;}
+
+/* Animations */
+@keyframes blink {
+  from, to {background-color: transparent;}
+  50% {background-color: var(--bs-dark);}
+}
+
+@keyframes blink-text {
+  from, to {opacity: .5;}
+  50% {opacity: 1;}
+}
